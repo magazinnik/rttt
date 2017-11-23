@@ -1,0 +1,149 @@
+Datasets
+
+1) scores_apps12.dta
+This dataset contains the RttT application scores by state and application section in the last round in which each state applied (of rounds 1 and 2). 
+
+Variables: 
+statename: state
+ROUNDYEAR: round of RttT (1 or 2)
+section2: section of the application (see "Race to the Top Executive Summary" in Additional Information folder for details)
+scoreTotal2: total points earned by state in a round, all sections
+score2: state's score on relevant section/round
+possible2: maximum points possible on relevant section/round
+future2: number of future commitments made by state on specific policy items in this section/round of the appplication, as coded by Howell's research team  
+past2: number of past achievements made by state on specific policy items in this section/round of the appplication, as coded by Howell's research team  
+pctscore2: percent of points state earned out of possible points in section/round
+
+2) survey.dta
+This dataset contains survey responses from legislators about RttT's influence on education policymaking in the state. 
+
+Variables: 
+id: survey id
+name: respondent name (and state/chamber)
+response: response to survey question
+statename: state
+win1: dummy - state won competition in round 1
+win2: dummy - state won competition in round 2
+win3: dummy - state won competition in round 3
+lose_p1: dummy - state applied and lost in round 1
+lose_p2: dummy - state applied and lost in round 2
+lose: dummy - state applied in any round but never won 
+win: dummy - state applied and won in any round
+
+3) speeches_long.dta
+This dataset contains our research team's coding of State of the State speeches for mentions of RttT and other education policies. 
+
+Variables: 
+statename: state
+year: year
+outcome: policy area (section of RttT application)
+gov: governor
+party: governor's party (1=Republican, 0 otherwise)
+date: date of speech
+Y2: percent of words devoted to RttT that are in support of it 
+wcpctrttt: words devoted to RttT as percent of total word count
+wc: total word count
+wced: total word count devoted to education
+wcrttt: total word count devoted to RttT
+wcpcted: words devoted to education as percent of total word count
+wcpctrttted: words devoted to rttt as percent of education word count
+win1: dummy - state won competition in round 1
+win2: dummy - state won competition in round 2
+win3: dummy - state won competition in round 3
+lose_p1: dummy - state applied and lost in round 1
+lose_p2: dummy - state applied and lost in round 2
+
+4) leghist_nagg.dta
+This dataset contains our research team's coding of states' legislative histories with respect to RttT policies (spelled out in the document "RttT policies" in Additional Information folder). This dataset contains one observation per state/year/policy that was coded; it is thus disaggregated (our team coded multiple policies per application section), as opposed to leghist_agg (below), which aggregates the same data up to the RttT application section. 
+
+Variables: 
+statename: state
+year: year
+outcome: policy (RttT application section or control policy)
+Y: 1 if given policy is on the books in given state/year, 0 otherwise 
+lagY: 1-year lag of Y
+control_2008: dummy - given policy was on the books in given state in 2008
+app1: dummy - state applied to RttT in round 1
+app2: dummy - state applied to RttT in round 2
+app3: dummy - state applied to RttT in round 3
+win1: dummy - state won competition in round 1
+win2: dummy - state won competition in round 2
+win3: dummy - state won competition in round 3
+lose_p1: dummy - state applied and lost in round 1
+lose_p2: dummy - state applied and lost in round 2
+lose: dummy - state applied in any round but never won 
+win: dummy - state applied and won in any round
+control: dummy - policy is not RttT
+all: dummy - policy is RttT 
+
+5) leghist_agg.dta 
+This dataset contains the aggregated state by year by RttT section legislative history data coded by our research team. When aggregating from individual policies up to RttT section, we maintained a binary policy implementation outcome by coding as 1 sections where all the constituent policies were in place, and 0 otherwise. 
+
+Variables: 
+statename: state
+year: year
+outcome: policy (RttT application section or control policy)
+y: 1 if given policy is on the books in given state/year, 0 otherwise 
+win: dummy - state applied and won in any round
+wint: dummy - state has won competition at any time up to and including given period
+lose: dummy - state applied in any round but never won 
+loset: dummy - state has applied at any time up to and including given period but not won over that time
+control: dummy - policy is not RttT
+all: dummy - policy is RttT 
+last_f: dummy - state committed to future implementation of policy in last application submitted to RttT
+last_p: dummy - state claimed past achievement on policy in last application submitted to RttT
+control_2009: dummy - policy was in place in 2009 
+poltype: policy area of RttT application (for fixed effects)
+pcthisp: Census - percent of population that is Hispanic in the state/year
+statepop: Census - total population in the state/year
+pctblack: Census - percent of population that is black in the state/year
+edrevtot: Census - total education revenues (thousands of dollars)
+edrevfed: Census - education revenues, from federal sources (thousands of dollars)
+edrevstate: Census - education revenues, from state sources (thousands of dollars)
+edrevlocal: Census - education revenues, from local sources (thousands of dollars)
+edexptot: Census - total education expenditures (thousands of dollars)
+eddebt: Census - education debt (thousands of dollars)
+ppstotal: Census - total per pupil spending  
+ppswages: Census - per pupil spending on wages 
+ppsbens: Census - per pupil spending on benefits 
+ppsinsttotal: Census - total per pupil spending, instructional staff
+ppsinstwages: Census - per pupil spending on wages, instructional staff 
+ppsinstbens: Census - per pupil spending on benefits, instructional staff 
+ppssupptot: Census - total per pupil spending, support services 
+ppssuppup: Census - per pupil spending on pupil support  
+ppssuppstaff: Census - per pupil spending on instructional staff support 
+ppsadmingen: Census - per pupil spending on general administration 
+ppsadminsch: Census - per pupil spending on school administration 
+enroll: Census - total public school enrollment 
+income: Census - total income (millions of dollars)
+gov_party: governor's party
+rtw: dummy - Right to Work state
+brevtot: Census - total budget revenue (thousands of dollars)
+bexptot: Census - total expenditure (thousands of dollars)
+sdem: dummy - Democratic majority in the state Senate
+hdem: dummy - Democratic majority in the state House
+gov_dem: dummy - Democratic governor 
+edrevpc: Census - education revenues per capita
+edrevfedpc: Census - education revenues, from federal sources, per capita
+edrevstatepc: Census - education revenues, from state sources, per capita
+edrevlocalpc: Census - education revenues, from local sources, per capita
+edexppc: Census - educational expenditures per capita 
+incomepc: Census - income per capita
+brevpc: Census - total budget revenue per capita 
+bexppc: Census - total expenditure per capita 
+expnoedpc: Census - total expenditure minus education expenditure, per capita
+ynpol: for diffusion analysis, an index constructed from geographically proximate states, as described in paper; same exact policy 
+yntype: for diffusion analysis, an index constructed from geographically proximate states, as described in paper; policy within same RttT section 
+ym1pol: for diffusion analysis, an index constructed from similar states, as described in paper; similarity based on variables "state.pop", "pct.hisp", "pct.black", "enroll", "income.pc", "ed.rev.state.pc", "ed.exp.pc"; same exact policy
+ym1type: for diffusion analysis, an index constructed from similar states, as described in paper; similarity based on variables "state.pop", "pct.hisp", "pct.black", "enroll", "income.pc", "ed.rev.state.pc", "ed.exp.pc"; policy within same RttT section
+ym2pol: for diffusion analysis, an index constructed from similar states, as described in paper; similarity based on variables "state.pop", "pct.hisp", "pct.black", "enroll", "income.pc", "ed.rev.state.pc", "b.exp.pc"; same exact policy
+ym2type: for diffusion analysis, an index constructed from similar states, as described in paper; similarity based on variables "state.pop", "pct.hisp", "pct.black", "enroll", "income.pc", "ed.rev.state.pc", "b.exp.pc"; policy within same RttT section
+ym3pol: for diffusion analysis, an index constructed from similar states, as described in paper; similarity based on variables "statename", "year", "state.pop", "pct.hisp", "pct.black","enroll", "income.pc", "ed.rev.state.pc", "exp.noed.pc"; same exact policy
+ym3type: for diffusion analysis, an index constructed from similar states, as described in paper; similarity based on variables "statename", "year", "state.pop", "pct.hisp", "pct.black","enroll", "income.pc", "ed.rev.state.pc", "exp.noed.pc"; policy within same RttT section
+ym4pol: for diffusion analysis, an index constructed from similar states, as described in paper; similarity based on variables "statename", "year", "state.pop", "pct.hisp", "pct.black", "enroll", "income.pc", "ed.rev.state.pc", "pps.inst.wages", "pps.inst.bens", "pps.supp.pup", "pps.supp.staff", "pps.admin.gen", "pps.admin.sch"; same exact policy
+ym4type: for diffusion analysis, an index constructed from similar states, as described in paper; similarity based on variables "statename", "year", "state.pop", "pct.hisp", "pct.black", "enroll", "income.pc", "ed.rev.state.pc", "pps.inst.wages", "pps.inst.bens", "pps.supp.pup", "pps.supp.staff", "pps.admin.gen", "pps.admin.sch"; policy within same RttT section 
+
+6) an1, an2, an3
+These datasets were used in our three matching analyses, and are all based on the dataset leghist_agg. The first, an1, is the subset of observations from 2010 and 2011, when Phase 1 and 2 winners had been announced but Phase 3 winners had not. The second, an2, includes observations on Phase 1 and 2 winners in the third (2012), fourth (2013), and fifth (2014) years of their granting periods and Phase 3 winners in the first (2012), second (2013), and third (2014) years of their granting period, respectively. The third, an3, includes Phase 3 winners and Phase 1 and 2 losers that were not subsequently invited to participate in the third competition, observed over the years 2012 to 2014.
+
+Variables are the same as in leghist_agg; variables beginning with "pctscore" are the score received by the state on its last submitted application as a percent of possible points on that section. 

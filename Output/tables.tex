@@ -1,0 +1,105 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs, multicol, multirow}
+\usepackage[capposition=top]{floatrow}
+\usepackage{graphicx}
+\usepackage{csquotes}
+\usepackage{lscape}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{dcolumn}
+\usepackage{varwidth}
+\usepackage{endnotes}
+\usepackage{indentfirst}
+\usepackage[hyphens]{url}
+%\usepackage{breakurl} 
+\usepackage[breaklinks]{hyperref}
+\usepackage[table]{xcolor}
+\usepackage{setspace}
+\usepackage{alltt}
+\usepackage{tabularx}
+\usepackage{verbatim}
+
+\let\endnote=\footnote
+\urlstyle{same}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{M}[1]{>{\begin{varwidth}[t]{#1}}l<{\end{varwidth}}}
+\newcolumntype{X}{>{\centering\arraybackslash}m{3.4cm}}
+\newcolumntype{Y}{>{\centering\arraybackslash}m{4.2cm}}
+
+\newcommand{\specialcell}[2][c]{\begin{tabular}[#1]{@{}l@{}}#2\end{tabular}}
+
+
+\begin{document}
+
+\begin{table}[h!]
+\small
+\caption*{\bf Table 3: Assessments of RttT Influence by State Legislators}
+\include{survey}
+\end{table}
+\clearpage
+
+\begin{landscape}
+\begin{table}[h!]
+\footnotesize
+\caption*{\bf Table 4: RttT Policy Enactment among Winners and Losers}
+\include{final.leghist_a2}
+\begin{minipage}{\textwidth} 
+{\footnotesize Per capita income and state revenue and expenditure variables are in thousands of dollars. Elementary-secondary school enrollment and state population are in thousands. Standard errors are clustered at the state level. \\
+ *** p$<$0.01, ** p$<$0.05, * p$<$0.10.}
+\end{minipage}
+\end{table}
+\end{landscape}
+\clearpage
+
+\begin{table}[h!]
+\footnotesize
+\caption*{\bf Table 5: Linking RttT Policy Enactments to Application Promises}
+\include{final.leghist_b2}
+\vspace{2mm}
+\begin{minipage}{.85\textwidth} 
+{\footnotesize Per capita income and state revenue and expenditure variables are in thousands of dollars. Elementary-secondary school enrollment and state population are in thousands. Standard errors are clustered at the state level. \\
+ *** p$<$0.01, ** p$<$0.05, * p$<$0.10.}
+\end{minipage}
+\end{table}
+\clearpage
+
+\begin{table}[h!]
+\footnotesize
+\captionsetup{justification=centering}
+\caption*{\bf Table 6: Average Treatment Effect on the Treated \\ Exact Matching on Year and Policy Domain, Nearest Neighbor Matching on Section Score}
+Comparison 1: 2010-11, treated observations include Phase 1 and 2 winners and untreated observations include all others \\
+\include{att_type_1}
+\vspace{5mm}
+Comparison 2: 2012-13, treated observations include Phase 3 winners and untreated observations include applicants that never won \\
+\include{att_type_2}
+\vspace{5mm}
+Comparison 3: 2012-13, treated observations include Phase 1 and 2 winners and untreated observations include all others (including Phase 3 winners) \\
+\include{att_type_3}
+\vspace{2mm}
+\begin{minipage}{\textwidth} 
+{\footnotesize Standard errors are clustered at the state level. \\
+ *** p$<$0.01, ** p$<$0.05, * p$<$0.10.}
+\end{minipage}
+\end{table}
+\clearpage
+
+
+\begin{table}[h!]
+\footnotesize
+\captionsetup{justification=centering}
+\caption*{\bf Table 7: Effect of Adoption of Same Policy in Proximate States}
+\include{diffreg1}
+\vspace{2mm}
+\begin{minipage}{.95\textwidth} 
+{\footnotesize Same policy in similar and neighboring states, state population, percent Black and Hispanic, elementary-secondary school enrollment, per capita income, and state education revenue and expenditure variables are standardized, so that the interpretation of their coefficients is the change in the outcome associated with a one standard deviation increase in the explanatory variable. Standard errors are clustered at the state level. \\
+ *** p$<$0.01, ** p$<$0.05, * p$<$0.10.}
+\end{minipage}
+\end{table}
+\clearpage
+\end{document}
